@@ -1,7 +1,7 @@
 function stop_load() {
 	window.stop()
 	//file name
-	var rgx = /theme39bf/
+	var rgx = /\b(theme39bf|jquery\.min3088|banana)\b/i
 	var html = document.documentElement
 	for (i = 0; i < html.children.length; ++i) {
 		let ch = html.children[i]
@@ -29,11 +29,6 @@ function stop_load() {
 				if (!rgx.test(hd.getAttribute("src"))) {
 					hd.remove()
 					setTimeout(stop_load, 50)
-				}
-				else {
-					if (ch.tagName == "HEAD") {
-						console.log(ch.children.length)
-					}
 				}
 			}
 		}
