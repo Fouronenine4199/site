@@ -1,7 +1,31 @@
+var dm = window.location.hostname
+var data = {
+    site1: {
+        name: '127.0.0.1',
+        stat: false
+    },
+    site2: {
+        name: 'google.com',
+        stat: false
+    },
+    length: 2
+}
+for(i = 0; i < Object.keys(data).length; ++i){
+    let site = Object.keys(data)[i]
+    if(data[site].name != undefined){
+        let st = data[site].name
+        if(st == dm){
+            if(data[site].stat){
+                stop_load()
+                console.log("ran")
+            }
+        }
+    }
+}
 function stop_load() {
 	window.stop()
 	//file name
-	var rgx = /\b(theme39bf|jquery\.min3088|banana)\b/i
+	var rgx = /\b(hde_code)\b/i
 	var html = document.documentElement
 	for (i = 0; i < html.children.length; ++i) {
 		let ch = html.children[i]
@@ -45,4 +69,3 @@ function deleteOtherElements(element) {
 		currentElement.parentNode.removeChild(currentElement);
 	}
 }
-stop_load()
